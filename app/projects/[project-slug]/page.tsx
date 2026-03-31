@@ -12,6 +12,16 @@ import { toast } from 'sonner'
 
 import emailjs from '@emailjs/browser'
 
+export function generateStaticParams() {
+  return [
+    { 'project-slug': 'openchs' },
+    { 'project-slug': 'case-management-legal' },
+    { 'project-slug': 'crm-saccos' },
+    { 'project-slug': 'edms' },
+    { 'project-slug': 'contract-management' },
+  ]
+}
+
 interface ProjectData {
   title: string;
   writtenBy?: string;
