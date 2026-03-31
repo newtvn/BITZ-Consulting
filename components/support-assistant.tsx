@@ -92,12 +92,16 @@ export default function SupportAssistant() {
       </AnimatePresence>
 
       {/* Chat Button */}
-      <Button
+      <button
         onClick={() => setIsChatOpen(!isChatOpen)}
-        className="bg-navy hover:bg-navy/90 text-white rounded-full shadow-lg"
+        className="relative w-14 h-14 rounded-full shadow-lg bg-mesh-card border border-navy/10 flex items-center justify-center hover:scale-105 transition-transform duration-300"
       >
-        <MessageSquare className="h-5 w-5" />
-      </Button>
+        {isChatOpen ? (
+          <X className="h-5 w-5 text-navy" />
+        ) : (
+          <MessageSquare className="h-5 w-5 text-navy" />
+        )}
+      </button>
     </div>
   )
 } 

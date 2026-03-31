@@ -26,19 +26,18 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-lg px-4 md:px-6">
-      <div className="container flex items-center justify-between h-16 mx-auto">
+    <header className="relative z-50 w-full bg-transparent px-4 md:px-6">
+      <div className="container flex items-center justify-between h-24 mx-auto">
         {/* Left: Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center overflow-visible">
           <Image
             src="/Bitz logo.png"
             alt="BITZ-itc Logo"
-            width={40}
-            height={40}
-            className="object-contain"
+            width={400}
+            height={500}
+            className="object-contain h-40 w-auto translate-y-4"
             priority
           />
-          <span className="text-lg font-bold tracking-tight text-navy">BITZ-itc</span>
         </Link>
 
         {/* Center: Pill Navigation */}
@@ -48,7 +47,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                "px-4 py-2 rounded-full text-base font-medium transition-all duration-200",
                 isActive(link.href)
                   ? "bg-white text-navy shadow-sm"
                   : "text-gray-500 hover:text-gray-900"
@@ -62,7 +61,7 @@ export default function Header() {
         {/* Right: Contact CTA + Mobile Menu */}
         <div className="flex items-center gap-3">
           <Link href="/contact" className="hidden md:block">
-            <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-sm px-6">
+            <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-6">
               Contact Us
             </Button>
           </Link>
@@ -79,14 +78,14 @@ export default function Header() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={cn("md:hidden bg-white border-t", isMobileMenuOpen ? 'block' : 'hidden')}>
+      <div className={cn("md:hidden bg-white", isMobileMenuOpen ? 'block' : 'hidden')}>
         <nav className="flex flex-col items-center space-y-1 py-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "w-full text-center px-4 py-3 text-sm font-medium transition-colors duration-200",
+                "w-full text-center px-4 py-3 text-base font-medium transition-colors duration-200",
                 isActive(link.href)
                   ? "text-navy bg-gray-50 font-semibold"
                   : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
@@ -101,7 +100,7 @@ export default function Header() {
             className="mt-2"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-sm px-6">
+            <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-6">
               Contact Us
             </Button>
           </Link>

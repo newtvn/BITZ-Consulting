@@ -1,156 +1,142 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Users } from 'lucide-react'
+
+const caseStudies = [
+  {
+    slug: "financial-services",
+    title: "Cloud Migration for Financial Services Firm",
+    category: "Financial Services",
+    result: "30% cost reduction",
+    description: "Seamless transition to cloud infrastructure resulting in 30% cost reduction and improved security posture across all business units.",
+    image: "/projects/placeholders/case-financial-services.svg",
+  },
+  {
+    slug: "manufacturing",
+    title: "Digital Transformation for Manufacturing Company",
+    category: "Manufacturing",
+    result: "40% efficiency increase",
+    description: "How we helped a leading manufacturer streamline operations and increase efficiency by 40% through integrated digital solutions.",
+    image: "/projects/placeholders/case-manufacturing.svg",
+  },
+]
 
 export default function CaseStudies() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
-      <main className="flex-1">
+      <main className="flex-1 bg-mesh">
+
         {/* Hero */}
-        <section className="w-full py-16 md:py-28 lg:py-32 bg-navy text-white">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-                  Case Studies
-                </h1>
-                <p className="text-xl md:text-2xl text-gray-300">
-                  Discover how we've helped businesses achieve their technology goals
-                </p>
+        <header className="max-w-7xl mx-auto px-6 pt-16 md:pt-28 pb-20 md:pb-32">
+          <div className="max-w-4xl">
+            <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4 block font-medium">Success Stories</span>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-navy leading-[0.9]">
+              Case Studies<span className="text-navy/40">.</span>
+            </h1>
+            <p className="mt-8 text-lg text-gray-500 max-w-xl leading-relaxed">
+              Real results for real businesses. Discover how we've helped organizations achieve their technology goals across East Africa.
+            </p>
+          </div>
+        </header>
+
+        {/* Case Studies List — Alternating Editorial */}
+        <div className="space-y-32 md:space-y-48 max-w-7xl mx-auto px-6 pb-32">
+          {caseStudies.map((study, index) => (
+            <section key={study.slug} className="group">
+              <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-12 items-end`}>
+                {/* Image */}
+                <div className="w-full lg:w-2/3 overflow-hidden rounded-xl bg-gray-100">
+                  <img
+                    alt={study.title}
+                    className="w-full h-[350px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    src={study.image}
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="w-full lg:w-1/3 pb-4 lg:pb-8">
+                  <div className="mb-6 flex items-center gap-4">
+                    <span className="text-sm uppercase tracking-widest text-navy/60 font-medium">{study.category}</span>
+                    <div className="h-[1px] w-12 bg-navy/10"></div>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter mb-2 text-navy">{study.title}</h2>
+                  <div className="mb-6">
+                    <span className="text-lg font-bold text-navy/60">{study.result}</span>
+                  </div>
+                  <p className="text-gray-500 leading-relaxed mb-8">
+                    {study.description}
+                  </p>
+                  <Link
+                    href={`/case-studies/${study.slug}`}
+                    className="inline-flex items-center gap-2 text-base font-semibold text-navy border-b border-navy pb-1 hover:gap-4 transition-all duration-300"
+                  >
+                    Read Case Study <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
-              <div className="flex justify-center">
-                <div className="relative w-full max-w-[500px] aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-xl shadow-ios-lg">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center space-y-4">
-                      <h3 className="text-2xl font-bold">Success Stories</h3>
-                      <p className="text-lg text-gray-300">Real results for real businesses</p>
-                    </div>
+            </section>
+          ))}
+        </div>
+
+        {/* Impact Stats */}
+        <section className="max-w-7xl mx-auto px-6 py-16 md:py-28">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 relative">
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-navy/10"></div>
+
+            <div className="pr-0 md:pr-16">
+              <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-6 block font-medium">Client Success</span>
+              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-navy leading-tight mb-8">
+                Discover the impact of our solutions.
+              </h2>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="border-t border-navy/10 pt-6">
+                  <div className="text-4xl md:text-5xl font-extrabold text-navy">75%</div>
+                  <p className="text-base text-gray-400 mt-2">Increase in operational efficiency</p>
+                </div>
+                <div className="border-t border-navy/10 pt-6">
+                  <div className="text-4xl md:text-5xl font-extrabold text-navy">100%</div>
+                  <p className="text-base text-gray-400 mt-2">Client satisfaction rate</p>
+                </div>
+              </div>
+            </div>
+            <div className="pl-0 md:pl-16 mt-12 md:mt-0">
+              <div className="bg-white p-8 md:p-10 rounded-xl shadow-ios">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-navy/5 flex items-center justify-center">
+                    <Users className="h-6 w-6 text-navy/60" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-navy">Client Testimonial</h3>
+                    <p className="text-base text-gray-400">Financial Services Company</p>
                   </div>
                 </div>
+                <p className="italic text-gray-500 leading-relaxed">"BITZ-itc transformed our IT infrastructure, resulting in a 40% reduction in downtime and significant cost savings. Their team's expertise and dedication exceeded our expectations."</p>
+                <div className="mt-6 text-base text-gray-400">— John Smith, CTO</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Featured Cases */}
-        <section className="w-full py-16 md:py-28 bg-white">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <Badge className="bg-navy hover:bg-navy/90 rounded-full px-4 py-1 text-sm">Featured Cases</Badge>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">
-                  Our Success Stories
-                </h2>
-                <p className="text-lg md:text-xl text-gray-500 max-w-[900px]">
-                  Explore how we've helped businesses across various industries achieve their technology goals
-                </p>
-              </div>
+        {/* CTA Section */}
+        <section className="max-w-7xl mx-auto px-6 pb-20 md:pb-32">
+          <div className="bg-mesh-navy p-12 md:p-20 lg:p-32 rounded-xl relative overflow-hidden">
+            <div className="relative z-10 max-w-2xl">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-white leading-none mb-8">
+                Your success story starts here.
+              </h2>
+              <p className="text-gray-300 text-lg mb-10 max-w-lg">
+                Let's discuss how we can help transform your business with innovative technology solutions.
+              </p>
+              <Link href="/contact">
+                <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
+                  Let's Talk <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-              <Card className="border-0 shadow-ios rounded-xl overflow-hidden hover:shadow-ios-lg transition-all duration-300">
-                <div className="aspect-video relative bg-gray-100">
-                  <img
-                    src="/placeholder.svg?height=300&width=600&text=Financial Services"
-                    alt="Financial Services Case Study"
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <CardContent className="p-8">
-                  <div className="mb-3">
-                    <Badge className="bg-navy/10 text-navy hover:bg-navy/20 rounded-full px-4 py-1 text-sm">
-                      Financial Services
-                    </Badge>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">Cloud Migration for Financial Services Firm</h3>
-                  <p className="text-lg text-gray-500 mb-6">
-                    Seamless transition to cloud infrastructure resulting in 30% cost reduction and improved security.
-                  </p>
-                  <Link
-                    href="/case-studies/financial-services"
-                    className="text-navy flex items-center font-semibold text-lg"
-                  >
-                    Read case study <ArrowRight className="h-5 w-5 ml-2" />
-                  </Link>
-                </CardContent>
-              </Card>
-              <Card className="border-0 shadow-ios rounded-xl overflow-hidden hover:shadow-ios-lg transition-all duration-300">
-                <div className="aspect-video relative bg-gray-100">
-                  <img
-                    src="/placeholder.svg?height=300&width=600&text=Manufacturing"
-                    alt="Manufacturing Case Study"
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <CardContent className="p-8">
-                  <div className="mb-3">
-                    <Badge className="bg-navy/10 text-navy hover:bg-navy/20 rounded-full px-4 py-1 text-sm">
-                      Manufacturing
-                    </Badge>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">Digital Transformation for Manufacturing Company</h3>
-                  <p className="text-lg text-gray-500 mb-6">
-                    How we helped a leading manufacturer streamline operations and increase efficiency by 40%.
-                  </p>
-                  <Link
-                    href="/case-studies/manufacturing"
-                    className="text-navy flex items-center font-semibold text-lg"
-                  >
-                    Read case study <ArrowRight className="h-5 w-5 ml-2" />
-                  </Link>
-                </CardContent>
-              </Card>
-            </div>
+            <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
           </div>
         </section>
 
-        {/* Client Success */}
-        <section className="w-full py-16 md:py-28 bg-gray-50">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
-              <div className="space-y-4">
-                <Badge className="bg-navy hover:bg-navy/90 rounded-full px-4 py-1 text-sm">
-                  Client Success
-                </Badge>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
-                  The Impact of Our Solutions
-                </h2>
-                <p className="text-lg text-gray-500">
-                  See how our technology solutions have transformed businesses across industries
-                </p>
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="bg-white p-6 rounded-xl">
-                    <div className="text-3xl md:text-4xl font-bold text-navy">75%</div>
-                    <p className="text-base md:text-lg text-gray-500">Increase in operational efficiency</p>
-                  </div>
-                  <div className="bg-white p-6 rounded-xl">
-                    <div className="text-3xl md:text-4xl font-bold text-navy">100%</div>
-                    <p className="text-base md:text-lg text-gray-500">Client satisfaction rate</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="bg-white p-6 rounded-xl">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-full bg-navy/10 flex items-center justify-center">
-                      <div className="text-navy font-bold text-xl">JS</div>
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-xl">Client Testimonial</h3>
-                      <p className="text-base text-gray-500">Financial Services Company</p>
-                    </div>
-                  </div>
-                  <p className="italic text-lg text-gray-500">
-                    "BITZ-itc transformed our IT infrastructure, resulting in a 40% reduction in downtime and
-                    significant cost savings. Their team's expertise and dedication exceeded our expectations."
-                  </p>
-                  <div className="mt-4 text-base text-gray-500">- John Smith, CTO</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   )

@@ -19,6 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
+        grotesk: ["var(--font-grotesk)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
       },
       colors: {

@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Mail, Phone } from 'lucide-react'
+import { MapPin, Mail, Phone, ArrowLeft } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CaseStudyCarousel } from "@/components/case-study-carousel"
@@ -131,7 +131,13 @@ export default function ProjectDetailClient({ projectData }: { projectData: Proj
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 bg-navy text-white">
           <div className="container px-4 md:px-6">
-            <Badge className="bg-white/20 hover:bg-white/30 text-white rounded-full px-4 py-1 text-sm">Project Overview</Badge>
+            <div className="flex items-center gap-4 mb-6">
+              <Link href="/projects" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-medium transition-colors">
+                <ArrowLeft className="h-4 w-4" /> Projects
+              </Link>
+              <span className="text-white/20">/</span>
+              <Badge className="bg-white/20 hover:bg-white/30 text-white rounded-full px-4 py-1 text-sm">Overview</Badge>
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter mt-4">
               {projectData.title}
             </h1>
@@ -150,7 +156,7 @@ export default function ProjectDetailClient({ projectData }: { projectData: Proj
           </div>
         </section>
 
-        <section id="overview" className="w-full py-16 md:py-28 bg-white">
+        <section id="overview" className="w-full py-16 md:py-28 bg-mesh">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6">Overview</h2>
             <div className="space-y-6 text-lg text-gray-700">
@@ -162,7 +168,7 @@ export default function ProjectDetailClient({ projectData }: { projectData: Proj
         </section>
 
         {projectData.challenges && (
-          <section id="challenges" className="w-full py-16 md:py-28 bg-gray-50">
+          <section id="challenges" className="w-full py-16 md:py-28 bg-mesh-gray">
             <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-6 text-lg text-gray-700">
                 {projectData.challenges.content.map((paragraph, index) => (
@@ -170,8 +176,8 @@ export default function ProjectDetailClient({ projectData }: { projectData: Proj
                 ))}
               </div>
               <div className="flex justify-center">
-                <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center">
-                  <p className="text-gray-500">Challenges Image Coming Soon</p>
+                <div className="w-full aspect-[16/9] rounded-xl overflow-hidden">
+                  <img src={projectData.challenges.image} alt="Challenges" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -179,11 +185,11 @@ export default function ProjectDetailClient({ projectData }: { projectData: Proj
         )}
 
          {projectData.solution && (
-          <section id="solution" className="w-full py-16 md:py-28 bg-white">
+          <section id="solution" className="w-full py-16 md:py-28 bg-mesh">
             <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-8 items-center">
                <div className="flex justify-center">
-                 <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center">
-                   <p className="text-gray-500">Solution Image Coming Soon</p>
+                 <div className="w-full aspect-[16/9] rounded-xl overflow-hidden">
+                   <img src={projectData.solution.image} alt="Solution" className="w-full h-full object-cover" />
                  </div>
               </div>
               <div className="space-y-6 text-lg text-gray-700">
@@ -196,7 +202,7 @@ export default function ProjectDetailClient({ projectData }: { projectData: Proj
          )}
 
          {projectData.results && (
-          <section id="results" className="w-full py-16 md:py-28 bg-gray-50">
+          <section id="results" className="w-full py-16 md:py-28 bg-mesh-gray">
             <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-8 items-center">
                <div className="space-y-6 text-lg text-gray-700">
                 {projectData.results.content.map((paragraph, index) => (
@@ -204,15 +210,15 @@ export default function ProjectDetailClient({ projectData }: { projectData: Proj
                 ))}
               </div>
                <div className="flex justify-center">
-                 <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center">
-                   <p className="text-gray-500">Results Image Coming Soon</p>
+                 <div className="w-full aspect-[16/9] rounded-xl overflow-hidden">
+                   <img src={projectData.results.image} alt="Results" className="w-full h-full object-cover" />
                  </div>
               </div>
             </div>
           </section>
          )}
 
-        <section id="contact" className="w-full py-16 md:py-28 bg-gray-50">
+        <section id="contact" className="w-full py-16 md:py-28 bg-mesh-gray">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
               <div className="space-y-4">
@@ -229,7 +235,7 @@ export default function ProjectDetailClient({ projectData }: { projectData: Proj
                     <div>
                       <h3 className="font-medium text-lg">Address</h3>
                       <p className="text-base text-gray-500">
-                        123 Tech Boulevard, Innovation City, 10001
+                        Prime Cartons, Mombasa Road, Kenya, next to Nice and Lovely (Dongpeng Building)
                       </p>
                     </div>
                   </div>
@@ -248,12 +254,12 @@ export default function ProjectDetailClient({ projectData }: { projectData: Proj
                     </div>
                     <div>
                       <h3 className="font-medium text-lg">Phone</h3>
-                      <p className="text-base text-gray-500">+1 (555) 123-4567</p>
+                      <p className="text-base text-gray-500">0110952788</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <Card className="border-0 shadow-ios rounded-xl">
+              <Card className="border-0 shadow-ios rounded-xl bg-mesh-card">
                 <CardContent className="p-8 space-y-6">
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold">Send us a message</h3>

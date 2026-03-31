@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <defs>
+    <pattern id="mesh-edms.svg" width="28" height="28" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="28" y2="28" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+      <line x1="28" y1="0" x2="0" y2="28" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="600" fill="#000435"/>
+  <rect width="900" height="600" fill="url(#mesh-edms.svg)"/>
+  <text x="50%" y="45%" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" letter-spacing="1">EDMS</text>
+  <text x="50%" y="55%" text-anchor="middle" fill="rgba(255,255,255,0.4)" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="400" letter-spacing="2">ELECTRONIC DOCUMENT MANAGEMENT</text>
+</svg>
