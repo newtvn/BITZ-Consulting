@@ -23,7 +23,7 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
-    --radius: 0.75rem;
+    --radius: 0.5rem;
     --navy: 240 100% 6.6%;
 
     /* Custom colors */
@@ -36,52 +36,6 @@
     --chart-3: 43 96% 56%;
     --chart-4: 262 83% 58%;
     --chart-5: 0 84% 60%;
-  }
-
-  .dark {
-    --background: 240 100% 6.6%;
-    --foreground: 0 0% 98%;
-    --card: 240 100% 6.6%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 100% 6.6%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-
-    /* Custom colors */
-    --navy-900: 240 100% 6.6%;
-    --navy-950: 240 100% 6.6%;
-
-    /* Dark mode gradient */
-    .bg-dark-gradient {
-      background: linear-gradient(to bottom right, #000022, #2a2a2a);
-    }
-
-    /* Dark mode neomorphic inset shadow */
-    .dark\:shadow-dark-neomorphic-inset {
-      box-shadow: inset 5px 5px 10px #00021d, inset -5px -5px 10px #00064e;
-    }
-
-    /* Dark mode neomorphic toggle circle shadow */
-    .dark\:shadow-dark-neomorphic-toggle {
-      box-shadow: 5px 5px 10px #00021d, -5px -5px 10px #00064e;
-    }
-
-    /* Light mode neomorphic inset shadow */
-    .light\:shadow-light-neomorphic-inset {
-      box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
-    }
   }
 }
 
