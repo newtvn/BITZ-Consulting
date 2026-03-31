@@ -550,8 +550,8 @@ export default function ProjectOverviewPage({
       <div className="flex flex-col min-h-screen items-center justify-center">
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-navy dark:text-white">Project Not Found</h1>
-            <p className="text-lg text-gray-500 dark:text-gray-400 mt-4">The requested project could not be found.</p>
+            <h1 className="text-4xl font-bold text-navy">Project Not Found</h1>
+            <p className="text-lg text-gray-500 mt-4">The requested project could not be found.</p>
             <Link href="/projects" passHref>
               <Button className="mt-8 bg-navy hover:bg-navy/90 text-white rounded-full text-base py-6 px-8">
                 Back to Projects
@@ -654,10 +654,10 @@ export default function ProjectOverviewPage({
         </section>
 
         {/* Overview Section */}
-        <section id="overview" className="w-full py-12 md:py-24 bg-white dark:bg-navy-900">
+        <section id="overview" className="w-full py-16 md:py-28 bg-white">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6">Overview</h2>
-            <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300">
+            <div className="space-y-6 text-lg text-gray-700">
               {projectData.overview.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -667,16 +667,16 @@ export default function ProjectOverviewPage({
 
         {/* Challenges Section */}
         {projectData.challenges && (
-          <section id="challenges" className="w-full py-12 md:py-24 bg-gray-50 dark:bg-navy-900">
+          <section id="challenges" className="w-full py-16 md:py-28 bg-gray-50">
             <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-8 items-center">
-              <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300">
+              <div className="space-y-6 text-lg text-gray-700">
                 {projectData.challenges.content.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
               <div className="flex justify-center">
-                <div className="w-full aspect-[16/9] bg-gray-100 dark:bg-navy/20 rounded-lg flex items-center justify-center">
-                  <p className="text-gray-500 dark:text-gray-400">Challenges Image Coming Soon</p>
+                <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center">
+                  <p className="text-gray-500">Challenges Image Coming Soon</p>
                 </div>
               </div>
             </div>
@@ -685,14 +685,14 @@ export default function ProjectOverviewPage({
 
          {/* Solution Section */}
          {projectData.solution && (
-          <section id="solution" className="w-full py-12 md:py-24 bg-white dark:bg-navy-900">
+          <section id="solution" className="w-full py-16 md:py-28 bg-white">
             <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-8 items-center">
                <div className="flex justify-center">
-                 <div className="w-full aspect-[16/9] bg-gray-100 dark:bg-navy/20 rounded-lg flex items-center justify-center">
-                   <p className="text-gray-500 dark:text-gray-400">Solution Image Coming Soon</p>
+                 <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center">
+                   <p className="text-gray-500">Solution Image Coming Soon</p>
                  </div>
               </div>
-              <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300">
+              <div className="space-y-6 text-lg text-gray-700">
                 {projectData.solution.content.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
@@ -703,16 +703,16 @@ export default function ProjectOverviewPage({
 
          {/* Results Section */}
          {projectData.results && (
-          <section id="results" className="w-full py-12 md:py-24 bg-gray-50 dark:bg-navy-900">
+          <section id="results" className="w-full py-16 md:py-28 bg-gray-50">
             <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-8 items-center">
-               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300">
+               <div className="space-y-6 text-lg text-gray-700">
                 {projectData.results.content.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
                <div className="flex justify-center">
-                 <div className="w-full aspect-[16/9] bg-gray-100 dark:bg-navy/20 rounded-lg flex items-center justify-center">
-                   <p className="text-gray-500 dark:text-gray-400">Results Image Coming Soon</p>
+                 <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center">
+                   <p className="text-gray-500">Results Image Coming Soon</p>
                  </div>
               </div>
             </div>
@@ -721,52 +721,52 @@ export default function ProjectOverviewPage({
 
 
         {/* Contact Section */}
-        <section id="contact" className="w-full py-12 md:py-24 bg-gray-50 dark:bg-navy-900">
+        <section id="contact" className="w-full py-16 md:py-28 bg-gray-50">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-start">
               <div className="space-y-4">
                 <Badge className="bg-navy hover:bg-navy/90 rounded-full px-4 py-1 text-sm">Get In Touch</Badge>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">Contact Us</h2>
-                <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400">
+                <p className="text-lg md:text-xl text-gray-500">
                   Have questions or ready to start your next project? Reach out to our team.
                 </p>
                 <div className="grid gap-6 mt-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-navy/20 flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-navy dark:text-white" />
+                    <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                      <MapPin className="h-6 w-6 text-navy" />
                     </div>
                     <div>
                       <h3 className="font-medium text-lg">Address</h3>
-                      <p className="text-base text-gray-500 dark:text-gray-400">
+                      <p className="text-base text-gray-500">
                         123 Tech Boulevard, Innovation City, 10001
                       </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-navy/20 flex items-center justify-center">
-                      <Mail className="h-6 w-6 text-navy dark:text-white" />
+                    <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                      <Mail className="h-6 w-6 text-navy" />
                     </div>
                     <div>
                       <h3 className="font-medium text-lg">Email</h3>
-                      <p className="text-base text-gray-500 dark:text-gray-400">info@bitz-itc.com</p>
+                      <p className="text-base text-gray-500">info@bitz-itc.com</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-navy/20 flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-navy dark:text-white" />
+                    <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                      <Phone className="h-6 w-6 text-navy" />
                     </div>
                     <div>
                       <h3 className="font-medium text-lg">Phone</h3>
-                      <p className="text-base text-gray-500 dark:text-gray-400">+1 (555) 123-4567</p>
+                      <p className="text-base text-gray-500">+1 (555) 123-4567</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <Card className="border-0 shadow-ios rounded-3xl">
+              <Card className="border-0 shadow-ios rounded-xl">
                 <CardContent className="p-8 space-y-6">
                   <div className="space-y-2">
                     <h3 className="text-2xl font-bold">Send us a message</h3>
-                    <p className="text-base text-gray-500 dark:text-gray-400">
+                    <p className="text-base text-gray-500">
                       Fill out the form below and we'll get back to you as soon as possible.
                     </p>
                   </div>
@@ -782,7 +782,7 @@ export default function ProjectOverviewPage({
                           value={formData.firstName}
                           onChange={handleChange}
                           required
-                          className="w-full p-3 text-base border rounded-full"
+                          className="w-full p-3 text-base border rounded-lg"
                           placeholder="John"
                         />
                       </div>
@@ -796,7 +796,7 @@ export default function ProjectOverviewPage({
                           value={formData.lastName}
                           onChange={handleChange}
                           required
-                          className="w-full p-3 text-base border rounded-full"
+                          className="w-full p-3 text-base border rounded-lg"
                           placeholder="Smith"
                         />
                       </div>
@@ -812,7 +812,7 @@ export default function ProjectOverviewPage({
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full p-3 text-base border rounded-full"
+                        className="w-full p-3 text-base border rounded-lg"
                         placeholder="john.smith@example.com"
                       />
                     </div>
@@ -887,7 +887,7 @@ export default function ProjectOverviewPage({
                         value={formData.message}
                         onChange={handleChange}
                         required
-                        className="w-full p-4 text-base border rounded-3xl min-h-[150px]"
+                        className="w-full p-4 text-base border rounded-xl min-h-[150px]"
                         placeholder="Tell us about your project or inquiry..."
                       />
                     </div>

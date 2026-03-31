@@ -170,7 +170,7 @@ export default function Team() {
                 </p>
               </div>
               <div className="flex justify-center">
-                <div className="relative w-full max-w-[500px] aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-3xl shadow-ios-lg">
+                <div className="relative w-full max-w-[500px] aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-xl shadow-ios-lg">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Users className="h-24 w-24 text-white/80" />
                   </div>
@@ -180,7 +180,7 @@ export default function Team() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 bg-white dark:bg-navy-900">
+        <section className="w-full py-16 md:py-28 bg-white">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -188,7 +188,7 @@ export default function Team() {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">
                   Meet Our Leadership Team
                 </h2>
-                <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-[900px]">
+                <p className="text-lg md:text-xl text-gray-500 max-w-[900px]">
                   Experienced professionals guiding our company's vision and growth
                 </p>
               </div>
@@ -197,7 +197,7 @@ export default function Team() {
               {teamMembers.filter(member => ['james-kaminju', 'mercy-kamau', 'nelson-adagi', 'joseph-kimani'].includes(member.id)).map(member => (
                  <Card 
                    key={member.id} 
-                   className="border-0 shadow-ios rounded-3xl overflow-hidden hover:shadow-ios-lg transition-all duration-300 cursor-pointer group"
+                   className="border-0 shadow-ios rounded-xl overflow-hidden hover:shadow-ios-lg transition-all duration-300 cursor-pointer group"
                    onClick={() => handleCardClick(member)}
                  >
                    <div className="aspect-video relative bg-gray-100">
@@ -233,8 +233,8 @@ export default function Team() {
                      </div>
                      <div className="flex-grow space-y-2">
                        <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
-                       <p className="text-lg text-gray-500 dark:text-gray-400 mb-4">{member.role}</p>
-                       <p className="text-base text-gray-500 dark:text-gray-400">
+                       <p className="text-lg text-gray-500 mb-4">{member.role}</p>
+                       <p className="text-base text-gray-500">
                          {member.description}
                        </p>
                      </div>
@@ -245,7 +245,7 @@ export default function Team() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 bg-gray-50 dark:bg-navy-950">
+        <section className="w-full py-16 md:py-28 bg-gray-50">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -253,7 +253,7 @@ export default function Team() {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter">
                   Our Specialized Teams
                 </h2>
-                <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 max-w-[900px]">
+                <p className="text-lg md:text-xl text-gray-500 max-w-[900px]">
                   Dedicated professionals driving innovation across all aspects of our business
                 </p>
               </div>
@@ -262,7 +262,7 @@ export default function Team() {
               {teamMembers.filter(member => !['james-kaminju', 'mercy-kamau', 'nelson-adagi', 'joseph-kimani'].includes(member.id)).map(member => (
                  <Card 
                    key={member.id} 
-                   className="border-0 shadow-ios rounded-3xl overflow-hidden hover:shadow-ios-lg transition-all duration-300 cursor-pointer group"
+                   className="border-0 shadow-ios rounded-xl overflow-hidden hover:shadow-ios-lg transition-all duration-300 cursor-pointer group"
                    onClick={() => handleCardClick(member)}
                  >
                    <div className="aspect-video relative bg-gray-100">
@@ -298,8 +298,8 @@ export default function Team() {
                      </div>
                      <div className="flex-grow space-y-2">
                        <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
-                       <p className="text-lg text-gray-500 dark:text-gray-400 mb-4">{member.role}</p>
-                       <p className="text-base text-gray-500 dark:text-gray-400">
+                       <p className="text-lg text-gray-500 mb-4">{member.role}</p>
+                       <p className="text-base text-gray-500">
                          {member.description}
                        </p>
                      </div>
@@ -325,14 +325,14 @@ export default function Team() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="relative w-full max-w-md md:max-w-2xl lg:max-w-3xl mx-4 bg-white dark:bg-navy-900 rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row"
+              className="relative w-full max-w-md md:max-w-2xl lg:max-w-3xl mx-4 bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row"
               onClick={(e) => e.stopPropagation()}
             >
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={handleClosePanel}
-                className="absolute top-2 right-2 z-10 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                className="absolute top-2 right-2 z-10 text-gray-500 hover:text-gray-700"
               >
                 <X className="h-5 w-5" />
               </Button>
@@ -345,25 +345,25 @@ export default function Team() {
               </div>
               <div className="p-6 space-y-4 flex-grow overflow-y-auto">
                 <h3 className="text-2xl font-bold">{selectedMember.name}</h3>
-                <p className="text-lg text-gray-600 dark:text-gray-400">{selectedMember.role}</p>
-                <p className="text-base text-gray-500 dark:text-gray-300">{selectedMember.description}</p>
+                <p className="text-lg text-gray-600">{selectedMember.role}</p>
+                <p className="text-base text-gray-500">{selectedMember.description}</p>
 
                 {/* Social Media Links */}
                 {(selectedMember.linkedin || selectedMember.instagram || selectedMember.github) && (
                   <div className="flex gap-4 mt-4">
                     {selectedMember.linkedin && (
                       <Link href={selectedMember.linkedin} target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="h-6 w-6 text-gray-500 hover:text-navy dark:text-gray-400 dark:hover:text-white" />
+                        <Linkedin className="h-6 w-6 text-gray-500 hover:text-navy" />
                       </Link>
                     )}
                     {selectedMember.instagram && (
                       <Link href={selectedMember.instagram} target="_blank" rel="noopener noreferrer">
-                        <Instagram className="h-6 w-6 text-gray-500 hover:text-navy dark:text-gray-400 dark:hover:text-white" />
+                        <Instagram className="h-6 w-6 text-gray-500 hover:text-navy" />
                       </Link>
                     )}
                     {selectedMember.github && (
                       <Link href={selectedMember.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-6 w-6 text-gray-500 hover:text-navy dark:text-gray-400 dark:hover:text-white" />
+                        <Github className="h-6 w-6 text-gray-500 hover:text-navy" />
                       </Link>
                     )}
                   </div>
@@ -375,7 +375,7 @@ export default function Team() {
                     {selectedMember.expertise && selectedMember.expertise.length > 0 && (
                       <div>
                         <h4 className="text-lg font-semibold">Expertise:</h4>
-                        <ul className="list-disc list-inside text-base text-gray-500 dark:text-gray-300">
+                        <ul className="list-disc list-inside text-base text-gray-500">
                           {selectedMember.expertise.map((item, index) => (
                             <li key={index}>{item}</li>
                           ))}
@@ -385,7 +385,7 @@ export default function Team() {
                     {selectedMember.accolades && selectedMember.accolades.length > 0 && (
                       <div>
                         <h4 className="text-lg font-semibold">Accolades:</h4>
-                        <ul className="list-disc list-inside text-base text-gray-500 dark:text-gray-300">
+                        <ul className="list-disc list-inside text-base text-gray-500">
                           {selectedMember.accolades.map((item, index) => (
                             <li key={index}>{item}</li>
                           ))}

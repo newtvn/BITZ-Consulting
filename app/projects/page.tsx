@@ -53,7 +53,7 @@ export default function ProjectsPage() {
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-navy text-white dark:bg-dark-gradient">
+        <section className="w-full py-16 md:py-28 lg:py-32 bg-navy text-white">
           <div className="container px-4 md:px-6 grid lg:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <Badge className="bg-white/20 hover:bg-white/30 text-white rounded-full px-4 py-1 text-sm">Our Projects</Badge>
@@ -68,17 +68,17 @@ export default function ProjectsPage() {
               <Carousel className="w-full max-w-[500px]">
                 <CarouselContent>
                   <CarouselItem>
-                     <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-3xl shadow-ios-lg flex items-center justify-center">
+                     <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-xl shadow-ios-lg flex items-center justify-center">
                       <Code className="h-24 w-24 text-white/80" />
                     </div>
                 </CarouselItem>
                  <CarouselItem>
-                   <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-3xl shadow-ios-lg flex items-center justify-center">
+                   <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-xl shadow-ios-lg flex items-center justify-center">
                       <Server className="h-24 w-24 text-white/80" />
                     </div>
                 </CarouselItem>
                  <CarouselItem>
-                   <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-3xl shadow-ios-lg flex items-center justify-center">
+                   <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-xl shadow-ios-lg flex items-center justify-center">
                       <Database className="h-24 w-24 text-white/80" />
                     </div>
                 </CarouselItem>
@@ -90,11 +90,11 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 bg-white dark:bg-navy-900 animate-fade-in">
+        <section className="w-full py-16 md:py-28 bg-white animate-fade-in">
           <div className="container px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project) => (
-                <Card key={project.slug} className="border-0 shadow-ios rounded-3xl overflow-hidden hover:shadow-ios-lg transition-all duration-300">
+                <Card key={project.slug} className="border-0 shadow-ios rounded-xl overflow-hidden hover:shadow-ios-lg transition-all duration-300">
                   {/* Use the CaseStudyCarousel component for project images */}
                   <div className="aspect-video relative bg-gray-100">
                     <img
@@ -110,12 +110,12 @@ export default function ProjectsPage() {
                       </Badge>
                     </div>
                     <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                    <p className="text-lg text-gray-500 dark:text-gray-400 mb-6">
+                    <p className="text-lg text-gray-500 mb-6">
                       {project.description}
                     </p>
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="text-navy dark:text-white flex items-center font-semibold text-lg"
+                      className="text-navy flex items-center font-semibold text-lg"
                     >
                       Read more <ArrowRight className="h-5 w-5 ml-2" />
                     </Link>

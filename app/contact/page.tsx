@@ -122,17 +122,17 @@ export default function Contact() {
                 <Carousel className="w-full max-w-[500px]">
                   <CarouselContent>
                     <CarouselItem>
-                      <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-3xl shadow-ios-lg flex items-center justify-center">
+                      <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-xl shadow-ios-lg flex items-center justify-center">
                         <MessageSquare className="h-24 w-24 text-white/80" />
                       </div>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-3xl shadow-ios-lg flex items-center justify-center">
+                      <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-xl shadow-ios-lg flex items-center justify-center">
                         <Mail className="h-24 w-24 text-white/80" />
                       </div>
                     </CarouselItem>
                     <CarouselItem>
-                      <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-3xl shadow-ios-lg flex items-center justify-center">
+                      <div className="relative w-full aspect-video bg-gradient-to-br from-[#000435] to-[#000a6b] rounded-xl shadow-ios-lg flex items-center justify-center">
                         <Phone className="h-24 w-24 text-white/80" />
                       </div>
                     </CarouselItem>
@@ -145,7 +145,7 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 bg-white dark:bg-navy-900">
+        <section className="w-full py-16 md:py-28 bg-white">
           <div className="container px-4 md:px-6">
             <div className="grid gap-8 lg:grid-cols-2">
               <div className="space-y-8">
@@ -154,7 +154,7 @@ export default function Contact() {
                   <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
                     Let's Start a Conversation
                   </h2>
-                  <p className="text-lg text-gray-500 dark:text-gray-400">
+                  <p className="text-lg text-gray-500">
                     Fill out the form and we'll get back to you within 24 hours
                   </p>
                 </div>
@@ -303,7 +303,7 @@ export default function Contact() {
                 </form>
               </div>
               <div className="space-y-8">
-                <Card className="border-0 shadow-ios rounded-3xl">
+                <Card className="border-0 shadow-ios rounded-xl">
                   <CardContent className="p-8">
                     <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
                     <div className="space-y-6">
@@ -313,7 +313,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <h4 className="font-medium">Address</h4>
-                          <p className="text-base text-gray-500 dark:text-gray-400">
+                          <p className="text-base text-gray-500">
                             {address}
                           </p>
                           <DirectionButtons address={address} />
@@ -325,7 +325,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <h4 className="font-medium">Phone</h4>
-                          <p className="text-gray-500 dark:text-gray-400">
+                          <p className="text-gray-500">
                             {phoneNumber}
                           </p>
                           <ContactButtons email={emailAddress} phone={phoneNumber} />
@@ -337,7 +337,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <h4 className="font-medium">Email</h4>
-                          <p className="text-gray-500 dark:text-gray-400">
+                          <p className="text-gray-500">
                             {emailAddress}
                           </p>
                         </div>
@@ -346,20 +346,20 @@ export default function Contact() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-0 shadow-ios rounded-3xl">
+                <Card className="border-0 shadow-ios rounded-xl">
                   <CardContent className="p-8">
                     <h3 className="text-2xl font-bold mb-6">Business Hours</h3>
                     <div className="space-y-4">
                       <div className="flex justify-between">
-                        <span className="text-gray-500 dark:text-gray-400">Monday - Friday</span>
+                        <span className="text-gray-500">Monday - Friday</span>
                         <span className="font-medium">9:00 AM - 6:00 PM</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500 dark:text-gray-400">Saturday</span>
+                        <span className="text-gray-500">Saturday</span>
                         <span className="font-medium">10:00 AM - 4:00 PM</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-500 dark:text-gray-400">Sunday</span>
+                        <span className="text-gray-500">Sunday</span>
                         <span className="font-medium">Closed</span>
                       </div>
                     </div>
@@ -370,7 +370,7 @@ export default function Contact() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 bg-gray-50 dark:bg-navy-950">
+        <section className="w-full py-16 md:py-28 bg-gray-50">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -378,7 +378,7 @@ export default function Contact() {
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tighter">
                   Need Immediate Assistance?
                 </h2>
-                <p className="text-lg text-gray-500 dark:text-gray-400 max-w-[900px]">
+                <p className="text-lg text-gray-500 max-w-[900px]">
                   Our support team is available to help you with any questions or concerns
                 </p>
               </div>
