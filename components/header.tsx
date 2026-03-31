@@ -2,81 +2,108 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { LayoutGrid } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Image from 'next/image';
 
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/our-vision', label: 'Our Vision' },
+  { href: '/services', label: 'Services' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/team', label: 'Team' },
+];
+
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white backdrop-blur-lg bg-white/50 px-4 md:px-6">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-lg px-4 md:px-6">
       <div className="container flex items-center justify-between h-16 mx-auto">
+        {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="flex items-center gap-2">
-            <Image
-              src="/Bitz logo.png"
-              alt="BITZ-itc Logo"
-              width={60}
-              height={60}
-              className="object-contain"
-              priority
-            />
-          </div>
+          <Image
+            src="/Bitz logo.png"
+            alt="BITZ-itc Logo"
+            width={40}
+            height={40}
+            className="object-contain"
+            priority
+          />
+          <span className="text-lg font-bold tracking-tight text-navy">BITZ-itc</span>
         </Link>
-        <nav className="hidden md:flex gap-6">
-          <Link href="/" className="text-base font-medium hover:text-navy transition-colors duration-200">
-            Home
-          </Link>
-          <Link href="/our-vision" className="text-base font-medium hover:text-navy transition-colors duration-200">
-            Our Vision
-          </Link>
-          <Link href="/services" className="text-base font-medium hover:text-navy transition-colors duration-200">
-            Services
-          </Link>
-          <Link href="/projects" className="text-base font-medium hover:text-navy transition-colors duration-200">
-            Projects
-          </Link>
-          <Link href="/team" className="text-base font-medium hover:text-navy transition-colors duration-200">
-            Our Team
-          </Link>
-          <Link href="/contact" className="text-base font-medium hover:text-navy transition-colors duration-200">
-            Contact
-          </Link>
+
+        {/* Center: Pill Navigation */}
+        <nav className="hidden md:flex items-center bg-gray-100 rounded-full p-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                isActive(link.href)
+                  ? "bg-white text-navy shadow-sm"
+                  : "text-gray-500 hover:text-gray-900"
+              )}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="icon" className="md:hidden rounded-full" onClick={toggleMobileMenu}>
-            <LayoutGrid className="h-5 w-5" />
+
+        {/* Right: Contact CTA + Mobile Menu */}
+        <div className="flex items-center gap-3">
+          <Link href="/contact" className="hidden md:block">
+            <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-sm px-6">
+              Contact Us
+            </Button>
+          </Link>
+          <Button
+            variant="outline"
+            size="icon"
+            className="md:hidden rounded-full"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <Menu className="h-5 w-5" />
             <span className="sr-only">Toggle menu</span>
           </Button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className={cn("md:hidden bg-white", isMobileMenuOpen ? 'block' : 'hidden')}>
-        <nav className="flex flex-col items-center space-y-4 py-4">
-          <Link href="/" className="text-base font-medium hover:text-navy transition-colors duration-200" onClick={toggleMobileMenu}>
-            Home
-          </Link>
-          <Link href="/our-vision" className="text-base font-medium hover:text-navy transition-colors duration-200" onClick={toggleMobileMenu}>
-            Our Vision
-          </Link>
-          <Link href="/services" className="text-base font-medium hover:text-navy transition-colors duration-200" onClick={toggleMobileMenu}>
-            Services
-          </Link>
-          <Link href="/projects" className="text-base font-medium hover:text-navy transition-colors duration-200" onClick={toggleMobileMenu}>
-            Projects
-          </Link>
-          <Link href="/team" className="text-base font-medium hover:text-navy transition-colors duration-200" onClick={toggleMobileMenu}>
-            Our Team
-          </Link>
-          <Link href="/contact" className="text-base font-medium hover:text-navy transition-colors duration-200" onClick={toggleMobileMenu}>
-            Contact
+      <div className={cn("md:hidden bg-white border-t", isMobileMenuOpen ? 'block' : 'hidden')}>
+        <nav className="flex flex-col items-center space-y-1 py-4">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "w-full text-center px-4 py-3 text-sm font-medium transition-colors duration-200",
+                isActive(link.href)
+                  ? "text-navy bg-gray-50 font-semibold"
+                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-50"
+              )}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href="/contact"
+            className="mt-2"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-sm px-6">
+              Contact Us
+            </Button>
           </Link>
         </nav>
       </div>
