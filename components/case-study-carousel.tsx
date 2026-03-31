@@ -27,7 +27,7 @@ export function CaseStudyCarousel({ images }: CaseStudyCarouselProps) {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="p-1"
             >
-              <Card className="border-0 shadow-ios rounded-3xl overflow-hidden hover:shadow-ios-lg transition-all duration-300">
+              <Card className="border-0 shadow-ios rounded-xl overflow-hidden hover:shadow-ios-lg transition-all duration-300">
                 <div className="aspect-video relative bg-gray-100">
                   <img
                     src={image.src}
@@ -37,7 +37,7 @@ export function CaseStudyCarousel({ images }: CaseStudyCarouselProps) {
                 </div>
                 <CardContent className="p-4">
                   <h3 className="font-bold text-lg mb-2">{image.title}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{image.description}</p>
+                  <p className="text-sm text-gray-500">{image.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
