@@ -37,10 +37,10 @@ export default function SupportAssistant() {
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="absolute bottom-16 right-0 w-80 md:w-96"
           >
-            <Card className="bg-white dark:bg-navy-950 shadow-lg">
+            <Card className="bg-white shadow-lg">
               <CardContent className="p-0">
                 {/* Chat Header */}
-                <div className="p-4 border-b dark:border-gray-800">
+                <div className="p-4 border-b">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -50,7 +50,7 @@ export default function SupportAssistant() {
                       variant="ghost"
                       size="icon"
                       onClick={() => setIsChatOpen(false)}
-                      className="hover:bg-gray-100 dark:hover:bg-gray-800"
+                      className="hover:bg-gray-100"
                     >
                       <X className="h-4 w-4" />
                     </Button>
@@ -60,7 +60,7 @@ export default function SupportAssistant() {
                 {/* Message Input */}
                 <div className="p-4">
                   <div className="space-y-4">
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-gray-600">
                       Type your message below and we'll open WhatsApp to continue the conversation.
                     </p>
                     <div className="flex gap-2">
@@ -70,7 +70,7 @@ export default function SupportAssistant() {
                         onChange={(e) => setMessage(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                         placeholder="Type your message..."
-                        className="flex-1 px-3 py-2 rounded-lg border dark:bg-gray-800 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-navy"
+                        className="flex-1 px-3 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-navy"
                       />
                       <Button 
                         onClick={handleSendMessage}
@@ -92,12 +92,16 @@ export default function SupportAssistant() {
       </AnimatePresence>
 
       {/* Chat Button */}
-      <Button
+      <button
         onClick={() => setIsChatOpen(!isChatOpen)}
-        className="bg-navy hover:bg-navy/90 text-white rounded-full shadow-lg"
+        className="relative w-14 h-14 rounded-full shadow-lg bg-mesh-card border border-navy/10 flex items-center justify-center hover:scale-105 transition-transform duration-300"
       >
-        <MessageSquare className="h-5 w-5" />
-      </Button>
+        {isChatOpen ? (
+          <X className="h-5 w-5 text-navy" />
+        ) : (
+          <MessageSquare className="h-5 w-5 text-navy" />
+        )}
+      </button>
     </div>
   )
 } 

@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss"
 
 const config = {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -20,6 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
+        grotesk: ["var(--font-grotesk)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
       },
       colors: {
