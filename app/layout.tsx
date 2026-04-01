@@ -5,6 +5,7 @@ import { Toaster } from 'sonner'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import SupportAssistant from "@/components/support-assistant"
+import SocialSidebar from "@/components/social-sidebar"
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -13,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "BITZ-itc - Innovative Tech Solutions",
+  title: "BITZ Consulting",
   description: "Transforming businesses through innovative technology solutions.",
 }
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Toaster position="top-center" />
+        <SocialSidebar />
         <SupportAssistant />
       </body>
     </html>

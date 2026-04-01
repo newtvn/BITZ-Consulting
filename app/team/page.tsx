@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { X, Linkedin, Instagram, Github, Terminal, Target, ChevronRight, Mail } from 'lucide-react'
+import { X, Terminal, ChevronRight, Mail } from 'lucide-react'
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -16,9 +16,6 @@ interface TeamMember {
   stack?: string[];
   expertise?: string[];
   accolades?: string[];
-  linkedin?: string;
-  instagram?: string;
-  github?: string;
 }
 
 const leadershipMembers: TeamMember[] = [
@@ -45,19 +42,8 @@ const leadershipMembers: TeamMember[] = [
     accolades: ['Project Management Professional'],
   },
   {
-    id: 'newton-brian',
-    index: '003',
-    name: 'Newton Brian',
-    role: 'Business Lead — Commercial & Design Engineer',
-    description: 'Drives commercial strategy and design engineering across all client-facing products. Combines deep technical knowledge with business acumen to architect solutions that are both commercially viable and technically elegant.',
-    image: '/team-profiles/Newton-profile.png',
-    stack: ['React', 'Next.js', 'Figma', 'TypeScript', 'AWS'],
-    expertise: ['UI/UX Design', 'Frontend Architecture', 'Commercial Strategy', 'Design Systems'],
-    accolades: ['Oracle Primavera P6 Certification', 'Cisco Certified DevNet Associate', 'AWS Certified Cloud Practitioner', 'Design Lead — IndabaX'],
-  },
-  {
     id: 'franklin-karanja',
-    index: '004',
+    index: '003',
     name: 'Franklin Karanja',
     role: 'Technical Lead',
     description: 'Architects and oversees the technical foundation of all BITZ-itc products. Leads code reviews, defines engineering standards, and ensures systems are built for performance, security, and scalability from day one.',
@@ -65,6 +51,17 @@ const leadershipMembers: TeamMember[] = [
     stack: ['Python', 'TensorFlow', 'Docker', 'PostgreSQL'],
     expertise: ['Software Architecture', 'AI/ML Engineering', 'System Design', 'Performance Optimization'],
     accolades: ['Finalist — A2SV'],
+  },
+  {
+    id: 'newton-brian',
+    index: '004',
+    name: 'Newton Brian',
+    role: 'Business Lead — Commercial & Design Engineer',
+    description: 'Drives commercial strategy and design engineering across all client-facing products. Combines deep technical knowledge with business acumen to architect solutions that are both commercially viable and technically elegant.',
+    image: '/team-profiles/Newton-profile.png',
+    stack: ['React', 'Next.js', 'Figma', 'TypeScript', 'AWS'],
+    expertise: ['UI/UX Design', 'Frontend Architecture', 'Commercial Strategy', 'Design Systems'],
+    accolades: ['Oracle Primavera P6 Certification', 'Cisco Certified DevNet Associate', 'AWS Certified Cloud Practitioner', 'Design Lead — IndabaX'],
   },
 ];
 
@@ -75,7 +72,7 @@ const engineeringMembers: TeamMember[] = [
     name: 'Ruth Ikamba',
     role: 'Finance & HR',
     description: 'Manages all financial operations, budgeting, and human resource strategy. Ensures the company maintains fiscal health while building a world-class engineering culture through strategic hiring and team development.',
-    image: '/team-profiles/Ruth-profile.jpg',
+    image: '/team-profiles/Ruth Ikamba.jpeg',
     stack: ['Financial Planning', 'HR Systems', 'Compliance'],
     expertise: ['Financial Management', 'Human Resources', 'Payroll & Benefits', 'Organizational Development'],
     accolades: [],
@@ -97,20 +94,20 @@ const engineeringMembers: TeamMember[] = [
     name: 'Brenda Ogutu',
     role: 'ML Engineer',
     description: 'Builds and fine-tunes machine learning models that power intelligent features across BITZ-itc products. Focuses on data preprocessing, feature engineering, model training, and deployment to production environments.',
-    image: '/team-profiles/Brenda-profile.jpg',
-    stack: ['Python', 'Scikit-learn', 'Pandas', 'Docker'],
-    expertise: ['Machine Learning', 'Data Engineering', 'Model Training', 'Feature Engineering'],
+    image: '/team-profiles/brenda profile.jpeg',
+    stack: ['Python', 'Vue.js', 'TypeScript'],
+    expertise: ['Data Engineering', 'Frontend Development', 'Machine Learning'],
     accolades: [],
   },
   {
     id: 'miriam-shem',
     index: '008',
     name: 'Miriam Shem',
-    role: 'Head of Social Media & AI',
-    description: 'Combines social media expertise with AI-driven marketing automation. Develops intelligent content strategies, manages brand presence, and leverages AI tools to amplify digital engagement across all platforms.',
-    image: '/team-profiles/Miriam-profile.jpg',
-    stack: ['AI Marketing', 'Analytics', 'Content Strategy'],
-    expertise: ['Social Media Strategy', 'AI for Marketing', 'Content Creation', 'Brand Development'],
+    role: 'AI Solutions Software Engineer',
+    description: 'Passionate about building intelligent systems that solve real-world problems at scale. With a strong foundation in full-stack development and machine learning, she designs and implements AI-driven solutions such as case triage systems, language translation tools, and data-powered decision support platforms for vulnerable communities. Her work contributes to digital transformation initiatives in child protection and social services across East Africa, bridging the gap between complex data and human-centered impact.',
+    image: '/team-profiles/Miriam Shem .jpeg',
+    stack: ['Python', 'JavaScript (TypeScript)', 'SQL'],
+    expertise: ['AI/ML Engineering', 'Full-Stack Development', 'Data-Driven Solutions', 'Digital Transformation'],
     accolades: [],
   },
   {
@@ -128,11 +125,11 @@ const engineeringMembers: TeamMember[] = [
     id: 'phylis-kamau',
     index: '010',
     name: 'Phylis Kamau',
-    role: 'CI/CD & Deployment',
-    description: 'Owns the deployment infrastructure and DevOps pipeline. Designs CI/CD workflows that enable rapid, reliable releases — keeping BITZ-itc\'s products shipping fast and running stable in production.',
+    role: 'DevOps & Site Reliability Engineer',
+    description: 'Leads the design and operation of BITZ\'s deployment infrastructure and reliability systems. Architects and scales CI/CD pipelines that enable rapid, consistent releases while maintaining high availability, performance, and production stability.',
     image: '/team-profiles/phylis-profile.jpg',
-    stack: ['GitHub Actions', 'Docker', 'AWS', 'Terraform'],
-    expertise: ['CI/CD', 'DevOps', 'Cloud Deployment', 'Infrastructure as Code'],
+    stack: ['Docker', 'Kubernetes', 'GitHub Actions', 'Jenkins', 'Grafana', 'Prometheus', 'AWS', 'Terraform', 'Ansible'],
+    expertise: ['CI/CD & Automation', 'Containerization & Orchestration', 'Monitoring & Observability', 'Cloud & Infrastructure'],
     accolades: [],
   },
   {
@@ -141,7 +138,7 @@ const engineeringMembers: TeamMember[] = [
     name: 'Mark Kungu',
     role: 'Frontend Developer',
     description: 'Crafts responsive, performant user interfaces using modern frontend frameworks. Translates design specifications into pixel-perfect, accessible web applications with a focus on user experience and performance.',
-    image: '/team-profiles/Mark-profile.jpg',
+    image: '/team-profiles/mark kungu .png',
     stack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
     expertise: ['Frontend Development', 'React Ecosystem', 'Responsive Design', 'Web Performance'],
     accolades: [],
@@ -150,11 +147,11 @@ const engineeringMembers: TeamMember[] = [
     id: 'marlon',
     index: '012',
     name: 'Marlon',
-    role: 'Software Intern',
-    description: 'Contributing to frontend and backend development while building foundational engineering skills. Works across the stack gaining hands-on experience with real-world enterprise projects.',
+    role: 'Software Engineer',
+    description: 'Contributing to frontend and backend development across the stack. Works on real-world enterprise projects delivering full-stack solutions.',
     image: '/team-profiles/Marlon-profile.jpg',
-    stack: ['React Native', 'Django', 'Bootstrap'],
-    expertise: ['Frontend Development', 'Mobile Development', 'Backend Fundamentals'],
+    stack: ['React Native', 'Django'],
+    expertise: ['AI Engineering', 'Mobile Development', 'Backend Fundamentals'],
     accolades: [],
   },
 ];
@@ -370,15 +367,61 @@ export default function Team() {
         <section className="max-w-7xl mx-auto px-6 mb-20 md:mb-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="bg-gray-100 aspect-square overflow-hidden rounded-xl">
-                <div className="w-full h-full bg-gradient-to-br from-navy to-navy/80 flex items-center justify-center">
-                  <Target className="h-32 w-32 text-white/20" />
+              <div className="aspect-square overflow-hidden rounded-2xl bg-navy relative">
+                {/* Animated grid background */}
+                <div className="absolute inset-0" style={{
+                  backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+                  backgroundSize: '40px 40px'
+                }} />
+                {/* Glowing orb */}
+                <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-cyan-500/20 rounded-full blur-[80px]" />
+                <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-indigo-500/15 rounded-full blur-[60px]" />
+
+                {/* Terminal window */}
+                <div className="absolute inset-8 md:inset-12 flex flex-col">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl flex-1 p-6 flex flex-col">
+                    {/* Terminal header */}
+                    <div className="flex items-center gap-2 mb-6 pb-4 border-b border-white/10">
+                      <div className="flex gap-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                      </div>
+                      <span className="font-mono text-xs text-white/30 ml-2">methodology.sh</span>
+                    </div>
+                    {/* Terminal content */}
+                    <div className="font-mono text-sm space-y-3 flex-1">
+                      <div><span className="text-green-400/70">$</span> <span className="text-white/60">cat ./approach</span></div>
+                      <div className="text-cyan-300/60 text-xs leading-relaxed pl-2 border-l border-cyan-400/20">
+                        Precision-driven engineering<br />
+                        for scalable enterprise systems
+                      </div>
+                      <div className="pt-2"><span className="text-green-400/70">$</span> <span className="text-white/60">ls ./principles</span></div>
+                      <div className="grid grid-cols-2 gap-2 pl-2">
+                        <span className="text-amber-300/50 text-xs">clean-architecture/</span>
+                        <span className="text-amber-300/50 text-xs">test-driven/</span>
+                        <span className="text-amber-300/50 text-xs">continuous-delivery/</span>
+                        <span className="text-amber-300/50 text-xs">human-centered/</span>
+                      </div>
+                      <div className="pt-2"><span className="text-green-400/70">$</span> <span className="text-white/40 animate-pulse">_</span></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="absolute -top-8 -right-8 bg-white p-8 md:p-12 shadow-ios-lg hidden md:block max-w-xs rounded-xl">
-                <Terminal className="h-8 w-8 text-navy mb-4" />
-                <h5 className="text-xl font-bold mb-2 text-navy">Technical Purity</h5>
-                <p className="text-base text-gray-500">We believe in clean code as a form of architectural art.</p>
+
+              {/* Floating card */}
+              <div className="absolute -top-6 -right-6 bg-white p-6 md:p-8 shadow-ios-lg hidden md:block max-w-[220px] rounded-xl border border-navy/5">
+                <div className="w-10 h-10 rounded-lg bg-navy/5 flex items-center justify-center mb-4">
+                  <Terminal className="h-5 w-5 text-navy" />
+                </div>
+                <h5 className="text-lg font-bold mb-1.5 text-navy">Technical Purity</h5>
+                <p className="text-sm text-gray-500 leading-relaxed">Clean code as architectural art.</p>
+              </div>
+
+              {/* Bottom-left floating badge */}
+              <div className="absolute -bottom-4 -left-4 bg-white px-5 py-3 shadow-ios-lg hidden md:flex items-center gap-3 rounded-xl border border-navy/5">
+                <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
+                <span className="font-mono text-sm text-navy/70">all systems operational</span>
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -564,31 +607,6 @@ export default function Team() {
                   </motion.div>
                 )}
 
-                {/* Social links */}
-                {(selectedMember.linkedin || selectedMember.instagram || selectedMember.github) && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.85 }}
-                    className="flex gap-4 pt-4 border-t border-navy/5"
-                  >
-                    {selectedMember.linkedin && (
-                      <Link href={selectedMember.linkedin} target="_blank" rel="noopener noreferrer">
-                        <Linkedin className="h-5 w-5 text-gray-400 hover:text-navy transition-colors" />
-                      </Link>
-                    )}
-                    {selectedMember.instagram && (
-                      <Link href={selectedMember.instagram} target="_blank" rel="noopener noreferrer">
-                        <Instagram className="h-5 w-5 text-gray-400 hover:text-navy transition-colors" />
-                      </Link>
-                    )}
-                    {selectedMember.github && (
-                      <Link href={selectedMember.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-5 w-5 text-gray-400 hover:text-navy transition-colors" />
-                      </Link>
-                    )}
-                  </motion.div>
-                )}
               </div>
             </motion.div>
           </motion.div>
