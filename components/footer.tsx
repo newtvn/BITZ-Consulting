@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, MessageSquare, Headphones, Globe } from 'lucide-react'
+import { Mail, MessageSquare, Headphones, Linkedin, Twitter, Instagram } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Footer() {
@@ -14,12 +14,9 @@ export default function Footer() {
                 alt="BITZ-itc Logo"
                 width={200}
                 height={250}
-                className="object-contain h-28 w-auto"
+                className="object-contain w-full max-h-44 h-auto"
               />
             </Link>
-            <p className="text-base text-gray-400">
-              Transforming businesses through innovative technology solutions.
-            </p>
           </div>
           <div className="space-y-4">
             <h3 className="text-xl font-medium">Services</h3>
@@ -42,7 +39,9 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-medium">Connect</h3>
             <div className="flex space-x-4">
-              <Link href="/" className="text-gray-400 hover:text-white"><Globe className="h-6 w-6" /><span className="sr-only">Website</span></Link>
+              <Link href="https://www.linkedin.com/company/bitz-it-consulting/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><Linkedin className="h-6 w-6" /><span className="sr-only">LinkedIn</span></Link>
+              <Link href="https://x.com/Consulting41793" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><Twitter className="h-6 w-6" /><span className="sr-only">X / Twitter</span></Link>
+              <Link href="https://www.instagram.com/bitz.itconsulting" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><Instagram className="h-6 w-6" /><span className="sr-only">Instagram</span></Link>
               <Link href="mailto:info@bitz-itc.com" className="text-gray-400 hover:text-white"><Mail className="h-6 w-6" /><span className="sr-only">Email</span></Link>
               <Link href="https://wa.me/254110952788" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white"><MessageSquare className="h-6 w-6" /><span className="sr-only">WhatsApp</span></Link>
               <Link href="tel:0110952788" className="text-gray-400 hover:text-white"><Headphones className="h-6 w-6" /><span className="sr-only">Support</span></Link>
