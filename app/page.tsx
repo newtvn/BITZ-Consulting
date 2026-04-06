@@ -651,12 +651,12 @@ export default function Home() {
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full text-base px-8 py-6 font-medium">
+                <Button className="bg-transparent border border-white/30 text-white hover:bg-white/10 rounded-full text-base px-8 py-6 font-medium">
                   Contact Us
                 </Button>
               </Link>
               <Link href="/capability-statement.pdf" target="_blank">
-                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full text-base px-8 py-6 font-medium">
+                <Button className="bg-transparent border border-white/30 text-white hover:bg-white/10 rounded-full text-base px-8 py-6 font-medium">
                   Capability Statement
                 </Button>
               </Link>
