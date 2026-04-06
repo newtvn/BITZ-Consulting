@@ -14,8 +14,9 @@ const navLinks = [
   { href: '/solutions', label: 'Solutions' },
   { href: '/consulting', label: 'Consulting' },
   { href: '/case-studies', label: 'Case Studies' },
+  { href: '/partners', label: 'Partners' },
+  { href: '/countries', label: 'Countries' },
   { href: '/about', label: 'About' },
-  { href: '/team', label: 'Team' },
 ];
 
 export default function Header() {
@@ -49,7 +50,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "px-3 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                "px-2.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200",
                 isActive(link.href)
                   ? "bg-white text-navy shadow-sm"
                   : "text-gray-500 hover:text-gray-900"
@@ -62,9 +63,14 @@ export default function Header() {
 
         {/* Right: Contact CTA + Mobile Menu */}
         <div className="flex items-center gap-3">
-          <Link href="/contact" className="hidden md:block">
-            <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-6">
-              Contact Us
+          <Link href="/contact?type=proposal" className="hidden md:block">
+            <Button variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white rounded-full text-sm px-5">
+              Request Proposal
+            </Button>
+          </Link>
+          <Link href="/contact?demo=true" className="hidden md:block">
+            <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-sm px-5">
+              Request Demo
             </Button>
           </Link>
           <Button
@@ -97,15 +103,24 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            className="mt-2"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-6">
-              Contact Us
-            </Button>
-          </Link>
+          <div className="flex flex-col gap-2 mt-2 w-full px-4">
+            <Link
+              href="/contact?type=proposal"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Button variant="outline" className="w-full border-navy text-navy hover:bg-navy hover:text-white rounded-full text-base px-6">
+                Request Proposal
+              </Button>
+            </Link>
+            <Link
+              href="/contact?demo=true"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Button className="w-full bg-navy hover:bg-navy/90 text-white rounded-full text-base px-6">
+                Request Demo
+              </Button>
+            </Link>
+          </div>
         </nav>
       </div>
     </header>

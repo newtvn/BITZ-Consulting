@@ -60,6 +60,18 @@ export default function OpenCHSPage() {
             <p className="mt-8 text-lg text-gray-500 max-w-xl leading-relaxed">
               A modular, open-source platform built specifically for protection systems, helplines, and social welfare programs.
             </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link href="/contact?demo=true">
+                <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-8 py-6 font-medium">
+                  Request Demo <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+              <Link href="/case-studies">
+                <Button variant="outline" className="border-navy text-navy hover:bg-navy/5 rounded-full text-base px-8 py-6 font-medium">
+                  View Implementations <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </header>
 
@@ -96,9 +108,9 @@ export default function OpenCHSPage() {
               <p className="text-gray-300 text-lg mb-10 max-w-lg">
                 Schedule a demo to see how OpenCHS can support your helpline, case management, and reporting needs.
               </p>
-              <Link href="/contact">
+              <Link href="/contact?demo=true">
                 <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
-                  Schedule a Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  Request Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>

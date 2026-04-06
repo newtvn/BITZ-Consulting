@@ -33,6 +33,7 @@ export default function Footer() {
               <li><Link href="/openchs" className="hover:text-white transition-colors">OpenCHS Platform</Link></li>
               <li><Link href="/solutions" className="hover:text-white transition-colors">Solutions</Link></li>
               <li><Link href="/case-studies" className="hover:text-white transition-colors">Case Studies</Link></li>
+              <li><Link href="/security" className="hover:text-white transition-colors">Security</Link></li>
             </ul>
           </div>
 
@@ -44,6 +45,7 @@ export default function Footer() {
               <li><Link href="/partners" className="hover:text-white transition-colors">Partners</Link></li>
               <li><Link href="/countries" className="hover:text-white transition-colors">Countries</Link></li>
               <li><Link href="/team" className="hover:text-white transition-colors">Our Team</Link></li>
+              <li><Link href="/careers" className="hover:text-white transition-colors">Careers</Link></li>
             </ul>
           </div>
 
@@ -51,7 +53,9 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-xl font-medium">Resources</h3>
             <ul className="space-y-3 text-base text-gray-400">
-              <li><Link href="/consulting" className="hover:text-white transition-colors">Consulting</Link></li>
+              <li><Link href="/docs" className="hover:text-white transition-colors">Documentation</Link></li>
+              <li><Link href="/insights" className="hover:text-white transition-colors">Insights & Blog</Link></li>
+              <li><Link href="/media" className="hover:text-white transition-colors">Media Kit</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
