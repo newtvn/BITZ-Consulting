@@ -55,7 +55,7 @@ export default function About() {
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-navy/10"></div>
 
             <div className="pr-0 md:pr-16">
-              <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-6 block font-medium">Who We Are</span>
+              <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-6 block font-medium">Our Mission</span>
               <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-navy leading-tight">
                 Building Digital Infrastructure for Social Impact
               </h2>
@@ -111,11 +111,18 @@ export default function About() {
               <p className="text-gray-300 text-lg mb-10 max-w-lg">
                 Whether you're building a new system or strengthening an existing one, we'd love to explore how we can support your goals.
               </p>
-              <Link href="/contact">
-                <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
-                  Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact?demo=true">
+                  <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
+                    Request Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link href="/case-studies">
+                  <Button variant="outline" className="border-white text-white hover:bg-white/10 rounded-full text-base py-6 px-10 font-bold">
+                    View Our Work <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
             </div>
             <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
           </div>

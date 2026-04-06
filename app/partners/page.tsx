@@ -112,11 +112,18 @@ export default function PartnersPage() {
               <p className="text-gray-300 text-lg mb-10 max-w-lg">
                 Whether you're a government, UN agency, or NGO, we'd love to discuss how we can support your protection programs.
               </p>
-              <Link href="/contact">
-                <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
-                  Let's Talk <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact?demo=true">
+                  <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
+                    Request Demo <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link href="/case-studies">
+                  <Button variant="outline" className="border-white text-white hover:bg-white/10 rounded-full text-base py-6 px-10 font-bold">
+                    Explore Case Studies <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
             </div>
             <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
           </div>

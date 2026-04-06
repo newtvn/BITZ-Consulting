@@ -132,7 +132,12 @@ export default function SolutionsPage() {
                         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-navy">{solution.title}</h2>
                       </div>
                       <p className="text-lg text-navy/40 font-medium mb-6">{solution.subtitle}</p>
-                      <p className="text-gray-500 leading-relaxed">{solution.description}</p>
+                      <p className="text-gray-500 leading-relaxed mb-6">{solution.description}</p>
+                      <Link href="/contact?demo=true">
+                        <Button variant="outline" className="border-navy text-navy hover:bg-navy/5 rounded-full text-sm px-6 py-4 font-medium">
+                          Learn More <ArrowRight className="h-4 w-4 ml-2" />
+                        </Button>
+                      </Link>
                     </div>
 
                     {/* Right: Key Features */}

@@ -45,13 +45,25 @@ export default function ConsultingPage() {
         {/* Hero */}
         <header className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 pt-16 md:pt-28 pb-20 md:pb-32">
           <div className="max-w-4xl">
-            <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4 block font-medium">Advisory & Implementation</span>
+            <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4 block font-medium">Advisors to Governments & International Partners</span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-navy leading-[0.9]">
               Consulting for Digital Transformation & Social Impact Systems<span className="text-navy/40">.</span>
             </h1>
             <p className="mt-8 text-lg text-gray-500 max-w-2xl leading-relaxed">
               Advisors to Governments & International Partners. BITZ helps governments and development partners design, modernize, and scale digital services — covering strategy, architecture, governance, security, and implementation.
             </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link href="/contact?type=proposal">
+                <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-8 py-6 font-medium">
+                  Request Proposal <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+              <Link href="/contact?type=consultation">
+                <Button variant="outline" className="border-navy text-navy hover:bg-navy/5 rounded-full text-base px-8 py-6 font-medium">
+                  Schedule a Consultation <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
           </div>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-navy/5">
             {[
@@ -72,6 +84,7 @@ export default function ConsultingPage() {
           <div className="mb-16">
             <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4 block font-medium">Services</span>
             <h3 className="text-4xl md:text-5xl font-extrabold tracking-tight text-navy">What We Consult On</h3>
+            <p className="mt-4 text-lg text-gray-500 max-w-2xl leading-relaxed">Comprehensive consulting services designed to deliver practical, sustainable outcomes for government and development programs.</p>
           </div>
 
           <div className="space-y-0">
@@ -81,7 +94,10 @@ export default function ConsultingPage() {
                   <span className="text-base text-navy/30 font-mono md:w-16 shrink-0">{service.number}</span>
                   <div className="flex-1">
                     <h4 className="text-2xl md:text-3xl font-extrabold text-navy mb-4 tracking-tight">{service.title}</h4>
-                    <p className="text-gray-500 leading-relaxed max-w-2xl">{service.description}</p>
+                    <p className="text-gray-500 leading-relaxed max-w-2xl mb-4">{service.description}</p>
+                    <Link href="/contact?type=consultation" className="inline-flex items-center text-navy font-medium hover:text-navy/70 transition-colors">
+                      Talk to an expert <ArrowRight className="h-4 w-4 ml-1" />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -192,11 +208,18 @@ export default function ConsultingPage() {
                   <Mail className="h-4 w-4" /> OpenCHS/product consulting: <a href="mailto:openchs@bitz-itc.com" className="underline text-white">openchs@bitz-itc.com</a>
                 </p>
               </div>
-              <Link href="/contact">
-                <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
-                  Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact?type=proposal">
+                  <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
+                    Request Proposal <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <a href="mailto:info@bitz-itc.com">
+                  <Button variant="outline" className="border-white text-white hover:bg-white/10 rounded-full text-base py-6 px-10 font-bold">
+                    Email Consulting Team <Mail className="ml-2 h-5 w-5" />
+                  </Button>
+                </a>
+              </div>
             </div>
             <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
           </div>

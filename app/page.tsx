@@ -45,7 +45,7 @@ export default function Home() {
                 </div>
                 <div className="lg:col-span-4 pb-3">
                   <p className="text-lg leading-relaxed text-gray-500">
-                    OpenCHS helps governments and international partners run multilingual helplines and manage sensitive cases.
+                    OpenCHS helps governments and international partners run multilingual helplines and manage sensitive cases across voice, SMS, chat, and social—securely and at scale, including labor and immigrant complaints.
                   </p>
                 </div>
               </div>
@@ -77,13 +77,13 @@ export default function Home() {
               </div>
 
               <div className="flex items-center gap-6 pt-10">
-                <Link href="/contact">
+                <Link href="/contact?demo=true">
                   <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-8 py-6 font-medium">
-                    Request a Demo
+                    Request Demo <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
                 </Link>
-                <Link href="/projects" className="text-base text-navy/60 hover:text-navy flex items-center gap-2 font-medium transition-colors">
-                  View Case Studies <ArrowRight className="h-4 w-4" />
+                <Link href="/case-studies" className="text-base text-navy/60 hover:text-navy flex items-center gap-2 font-medium transition-colors">
+                  View Case Studies
                 </Link>
               </div>
             </div>
@@ -161,31 +161,37 @@ export default function Home() {
                 icon: HeartHandshake,
                 title: "OpenCHS Helpline & Case Management",
                 desc: "End-to-end case management for VAC, GBV, and child protection programs with multi-channel intake.",
+                anchor: "helpline",
               },
               {
                 icon: Shield,
                 title: "PSEA Reporting & Case Handling",
                 desc: "Confidential reporting mechanisms for protection against sexual exploitation and abuse.",
+                anchor: "psea",
               },
               {
                 icon: FileCheck,
                 title: "Complaints & Grievance Mechanisms",
                 desc: "Structured intake and resolution workflows for organizational accountability.",
+                anchor: "complaints",
               },
               {
                 icon: Briefcase,
                 title: "Labor & Immigrant Protection",
                 desc: "Cross-border case tracking connecting migrants abroad with home government support.",
+                anchor: "labor",
               },
               {
                 icon: Layers,
                 title: "Interoperability & Integrations",
                 desc: "Connect with telecom, SMS gateways, email, social channels, and existing systems.",
+                anchor: "integrations",
               },
               {
                 icon: Brain,
                 title: "Responsible AI & Automation",
                 desc: "Human-in-the-loop AI for triage, routing, and analytics\u2014never for high-risk decisions.",
+                anchor: "ai",
               },
             ].map((card) => {
               const Icon = card.icon
@@ -194,9 +200,20 @@ export default function Home() {
                   <Icon className="h-8 w-8 text-navy group-hover:text-white mb-6 transition-colors duration-500" />
                   <h3 className="text-xl font-bold text-navy group-hover:text-white mb-3 transition-colors duration-500">{card.title}</h3>
                   <p className="text-gray-500 group-hover:text-gray-300 text-base leading-relaxed transition-colors duration-500">{card.desc}</p>
+                  <Link href={`/solutions#${card.anchor}`} className="inline-flex items-center gap-1 text-sm text-navy/50 group-hover:text-white/60 mt-4 font-medium transition-colors duration-500">
+                    Learn more <ArrowRight className="h-3 w-3" />
+                  </Link>
                 </div>
               )
             })}
+          </div>
+
+          <div className="mt-10">
+            <Link href="/solutions">
+              <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-8 py-6 font-medium">
+                Explore All Solutions <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
           </div>
         </section>
 
@@ -236,6 +253,14 @@ export default function Home() {
               )
             })}
           </div>
+
+          <div className="mt-10">
+            <Link href="/consulting">
+              <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-8 py-6 font-medium">
+                Explore Consulting <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
         </section>
 
         {/* ── OpenCHS Platform (dark section) ── */}
@@ -244,7 +269,7 @@ export default function Home() {
             <span className="text-xs uppercase tracking-[0.3em] text-white/40 mb-4 block font-medium">The Platform</span>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">One Platform for End-to-End Case Management</h2>
             <p className="text-gray-400 text-lg mt-4 max-w-3xl">
-              OpenCHS is a modular, open-source platform built specifically for protection systems.
+              OpenCHS is a modular, open-source platform built specifically for protection systems. From first contact to case closure…
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12 items-start">
@@ -278,6 +303,14 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
+            <div className="mt-10">
+              <Link href="/openchs">
+                <Button className="bg-white hover:bg-gray-100 text-navy rounded-full text-base px-8 py-6 font-medium">
+                  Learn About OpenCHS <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -295,6 +328,12 @@ export default function Home() {
             {["Uganda", "GIZ-Funded", "Cross-border Protection"].map((tag) => (
               <span key={tag} className="text-xs uppercase tracking-wider font-medium bg-navy/5 text-navy px-4 py-2 rounded-full">{tag}</span>
             ))}
+          </div>
+
+          <div className="mt-6">
+            <Link href="/case-studies" className="inline-flex items-center gap-2 text-base font-semibold text-navy border-b border-navy pb-1 hover:gap-4 transition-all duration-300">
+              Read Full Case Study <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
 
           <div className="mt-10">
@@ -331,24 +370,28 @@ export default function Home() {
                 partner: "GIZ",
                 title: "Labor & Immigrant Complaints System",
                 features: ["Cross-border case tracking", "Multi-channel migrant reporting", "Government coordination"],
+                slug: "uganda-giz",
               },
               {
                 country: "Kenya",
                 partner: "UNICEF",
                 title: "National Child Helpline Integration",
                 features: ["30,000+ monthly contacts", "Multi-agency referrals", "Real-time dashboards"],
+                slug: "kenya",
               },
               {
                 country: "Tanzania",
                 partner: "Government",
                 title: "Social Welfare Case Management",
                 features: ["Unified case tracking", "Workflow automation", "Reporting standardization"],
+                slug: "tanzania",
               },
               {
                 country: "Somalia",
                 partner: "UNFPA",
                 title: "Federal Protection Systems",
                 features: ["GBV response coordination", "Multi-language support", "Partner network integration"],
+                slug: "somalia",
               },
             ].map((cs) => (
               <div key={cs.title} className="bg-white p-10 group hover:bg-navy transition-all duration-500">
@@ -364,8 +407,19 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+                <Link href={`/case-studies/${cs.slug}`} className="inline-flex items-center gap-1 text-sm text-navy/50 group-hover:text-white/60 mt-4 font-medium transition-colors duration-500">
+                  Read case study <ArrowRight className="h-3 w-3" />
+                </Link>
               </div>
             ))}
+          </div>
+
+          <div className="mt-10">
+            <Link href="/case-studies">
+              <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-8 py-6 font-medium">
+                See All Case Studies <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
           </div>
         </section>
 
@@ -406,6 +460,14 @@ export default function Home() {
           </div>
 
           <p className="text-sm text-gray-400 mt-8">Partner names shown for attribution. Logos used with permission where applicable.</p>
+
+          <div className="mt-10">
+            <Link href="/partners">
+              <Button variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white rounded-full text-base px-8 py-6 font-medium">
+                View all partners <ArrowRight className="h-4 w-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
         </section>
 
         {/* ── Security & Compliance ── */}
@@ -449,6 +511,12 @@ export default function Home() {
               )
             })}
           </div>
+
+          <div className="mt-8">
+            <Link href="/security" className="inline-flex items-center gap-1 text-sm text-navy/50 hover:text-navy font-medium transition-colors">
+              Learn about our security practices <ArrowRight className="h-3 w-3" />
+            </Link>
+          </div>
         </section>
 
         {/* ── Global Footprint ── */}
@@ -480,6 +548,13 @@ export default function Home() {
             <p className="text-gray-500 text-base max-w-3xl">
               With proven deployments across Africa, we&apos;re ready to scale OpenCHS to additional regions. Our 3-month rapid rollout model means you can have a live system quickly.
             </p>
+            <div className="mt-6">
+              <Link href="/contact?demo=true">
+                <Button className="bg-navy hover:bg-navy/90 text-white rounded-full text-base px-8 py-6 font-medium">
+                  Partner With Us <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -514,8 +589,15 @@ export default function Home() {
 
         {/* ── Latest Thinking ── */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-28">
-          <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4 block font-medium">Insights</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-navy">Latest Thinking</h2>
+          <div className="flex flex-col md:flex-row justify-between items-baseline gap-4">
+            <div>
+              <span className="text-xs uppercase tracking-[0.3em] text-gray-400 mb-4 block font-medium">Insights</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-navy">Latest Thinking</h2>
+            </div>
+            <Link href="/insights" className="text-base text-navy/50 hover:text-navy transition-colors flex items-center gap-1">
+              Read all insights <ArrowRight className="h-3 w-3" />
+            </Link>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-navy/5 mt-12">
             {[
@@ -523,19 +605,22 @@ export default function Home() {
                 category: "Child Protection",
                 date: "Jan 2026",
                 title: "Strengthening Child Protection Systems with Digital Case Management",
+                slug: "child-protection-systems",
               },
               {
                 category: "GBV Response",
                 date: "Dec 2025",
                 title: "Best Practices for GBV Response Workflows in Resource-Constrained Settings",
+                slug: "gbv-response-workflows",
               },
               {
                 category: "Labor Protection",
                 date: "Nov 2025",
                 title: "Cross-Border Protection: Supporting Migrant Workers Through Technology",
+                slug: "migrant-worker-protection",
               },
             ].map((article) => (
-              <div key={article.title} className="bg-white p-10 group hover:bg-navy transition-all duration-500">
+              <Link key={article.title} href={`/insights/${article.slug}`} className="bg-white p-10 group hover:bg-navy transition-all duration-500 block">
                 <span className="text-xs uppercase tracking-wider text-gray-400 group-hover:text-gray-400 transition-colors duration-500">
                   {article.category} | {article.date}
                 </span>
@@ -545,7 +630,7 @@ export default function Home() {
                 <span className="inline-flex items-center gap-1 text-sm text-navy/50 group-hover:text-white/60 mt-6 font-medium transition-colors duration-500">
                   Read more <ArrowRight className="h-3 w-3" />
                 </span>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -560,9 +645,19 @@ export default function Home() {
               Connect with our team to discuss how OpenCHS can support your protection programs, helplines, and case management needs.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-              <Link href="/contact">
+              <Link href="/contact?demo=true">
                 <Button className="bg-white hover:bg-gray-100 text-navy rounded-full text-base px-8 py-6 font-medium">
-                  Contact Us <ArrowRight className="h-4 w-4 ml-2" />
+                  Request Demo <ArrowRight className="h-4 w-4 ml-2" />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full text-base px-8 py-6 font-medium">
+                  Contact Us
+                </Button>
+              </Link>
+              <Link href="/capability-statement.pdf" target="_blank">
+                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 rounded-full text-base px-8 py-6 font-medium">
+                  Capability Statement
                 </Button>
               </Link>
             </div>
@@ -619,7 +714,7 @@ export default function Home() {
                   </div>
                   <div className="space-y-1">
                     <label htmlFor="email" className="text-sm font-medium text-gray-500">Email</label>
-                    <input id="email" type="email" className="w-full p-3 text-base border border-navy/10 rounded-lg focus:outline-none focus:ring-1 focus:ring-navy" placeholder="you@example.com" />
+                    <input id="email" type="email" className="w-full p-3 text-base border border-navy/10 rounded-lg focus:outline-none focus:ring-1 focus:ring-navy" placeholder="your@email.com" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -648,7 +743,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-1">
                   <label htmlFor="message" className="text-sm font-medium text-gray-500">Message</label>
-                  <textarea id="message" className="w-full p-3 text-base border border-navy/10 rounded-xl min-h-[120px] focus:outline-none focus:ring-1 focus:ring-navy" placeholder="Tell us about your needs..." />
+                  <textarea id="message" className="w-full p-3 text-base border border-navy/10 rounded-xl min-h-[120px] focus:outline-none focus:ring-1 focus:ring-navy" placeholder="How can we help you?" />
                 </div>
                 <Button className="w-full bg-navy hover:bg-navy/90 text-white rounded-full text-base py-6">Send Message</Button>
               </div>

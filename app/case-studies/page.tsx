@@ -224,9 +224,9 @@ export default function CaseStudies() {
                 Join the growing number of governments and organizations using
                 OpenCHS to strengthen their protection systems.
               </p>
-              <Link href="/contact">
+              <Link href="/contact?demo=true">
                 <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
-                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                  Request Demo <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>

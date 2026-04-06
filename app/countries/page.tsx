@@ -83,9 +83,9 @@ export default function Countries() {
               <p className="text-gray-300 text-lg mb-10 max-w-lg">
                 With proven deployments across Africa, we're ready to scale OpenCHS to additional regions. Our 3-month rapid rollout model means you can have a live system quickly.
               </p>
-              <Link href="/contact">
+              <Link href="/contact?demo=true">
                 <Button className="bg-white text-navy hover:bg-gray-100 rounded-full text-base py-6 px-10 font-bold">
-                  Get Started <ArrowRight className="ml-2 h-5 w-5" />
+                  Partner With Us <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
