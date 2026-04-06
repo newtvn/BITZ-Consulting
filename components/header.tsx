@@ -17,6 +17,7 @@ const navLinks = [
   { href: '/partners', label: 'Partners' },
   { href: '/countries', label: 'Countries' },
   { href: '/about', label: 'About' },
+  { href: '/team', label: 'Team' },
 ];
 
 export default function Header() {
