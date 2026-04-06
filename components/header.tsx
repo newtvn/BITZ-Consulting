@@ -10,9 +10,11 @@ import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/our-vision', label: 'Our Vision' },
-  { href: '/services', label: 'Services' },
-  { href: '/projects', label: 'Projects' },
+  { href: '/openchs', label: 'OpenCHS' },
+  { href: '/solutions', label: 'Solutions' },
+  { href: '/consulting', label: 'Consulting' },
+  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/about', label: 'About' },
   { href: '/team', label: 'Team' },
 ];
 
@@ -47,7 +49,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "px-4 py-2 rounded-full text-base font-medium transition-all duration-200",
+                "px-3 py-2 rounded-full text-sm font-medium transition-all duration-200",
                 isActive(link.href)
                   ? "bg-white text-navy shadow-sm"
                   : "text-gray-500 hover:text-gray-900"
